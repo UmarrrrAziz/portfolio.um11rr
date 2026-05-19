@@ -77,7 +77,7 @@ function toggleChat(){
     }
 }
 
-function sendMessage(){
+async function sendMessage(){
 
     const input =
     document.getElementById("userInput");
@@ -86,9 +86,9 @@ function sendMessage(){
     document.getElementById("chatBody");
 
     const userText =
-    input.value.toLowerCase();
+    input.value;
 
-    if(input.value.trim() === "") return;
+    if(userText.trim() === "") return;
 
     const userMessage =
     document.createElement("div");
@@ -97,54 +97,11 @@ function sendMessage(){
     "user-message";
 
     userMessage.textContent =
-    input.value;
+    userText;
 
     chatBody.appendChild(userMessage);
 
-    let reply =
-    "I don't understand that yet.";
-
-    if(userText.includes("name")){
-
-        reply =
-        "His name is Umar Bin Abdul Aziz 🚀";
-
-    }
-
-    else if(userText.includes("bgmi")){
-
-        reply =
-        "BGMI ID: 5113772029 🎮";
-
-    }
-
-    else if(userText.includes("skills")){
-
-        reply =
-        "Python, Next.js, HTML, CSS, JavaScript and Gaming.";
-
-    }
-
-    else if(userText.includes("instagram")){
-
-        reply =
-        "@um11rr_ 📸";
-
-    }
-
-    else if(userText.includes("telegram")){
-
-        reply =
-        "@um11rr ✈️";
-
-    }
-
-    else if(userText.includes("coder")){
-
-        reply =
-        "Yes 😎 Umar is passionate about coding and development.";
-
-    }
+    input.value = "";
 
     const botMessage =
     document.createElement("div");
@@ -152,17 +109,69 @@ function sendMessage(){
     botMessage.className =
     "bot-message";
 
-    setTimeout(() => {
+    botMessage.textContent =
+    "Thinking...";
+
+    chatBody.appendChild(botMessage);
+
+    chatBody.scrollTop =
+    chatBody.scrollHeight;
+
+    try{
+
+        const response = await fetch(
+        "https://api.openai.com/v1/chat/completions",
+        {
+
+            method:"POST",
+
+            headers:{
+
+                "Content-Type":"application/json",
+
+                "Authorization":
+                "Bearer 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"
+
+            },
+
+            body:JSON.stringify({
+
+                model:"gpt-3.5-turbo",
+
+                messages:[
+
+                    {
+                        role:"system",
+
+                        content:
+                        "You are Umar's AI assistant."
+                    },
+
+                    {
+                        role:"user",
+
+                        content:userText
+                    }
+
+                ]
+
+            })
+
+        });
+
+        const data =
+        await response.json();
 
         botMessage.textContent =
-        reply;
+        data.choices[0].message.content;
 
-        chatBody.appendChild(botMessage);
+    }
 
-        chatBody.scrollTop =
-        chatBody.scrollHeight;
+    catch(error){
 
-    }, 700);
+        botMessage.textContent =
+        "Error connecting to AI.";
 
-    input.value = "";
+    }
+
 }
