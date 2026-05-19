@@ -409,3 +409,93 @@ html {
         0 0 20px rgba(56, 189, 248, 0.5),
         0 0 40px rgba(56, 189, 248, 0.2);
 }
+/* AI SCANNER */
+
+#scanner{
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100vh;
+
+    background:#000;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    z-index:10000;
+
+    overflow:hidden;
+
+    flex-direction:column;
+}
+
+.scan-box{
+    position:relative;
+
+    width:320px;
+    height:320px;
+
+    border:2px solid #38bdf8;
+
+    border-radius:20px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+
+    box-shadow:0 0 40px #38bdf8;
+}
+
+.scan-line{
+    position:absolute;
+
+    width:100%;
+    height:6px;
+
+    background:#38bdf8;
+
+    box-shadow:0 0 20px #38bdf8;
+
+    animation:scan 2s linear infinite;
+}
+
+@keyframes scan{
+
+    0%{
+        top:0;
+    }
+
+    100%{
+        top:100%;
+    }
+
+}
+
+.scan-text{
+    color:#38bdf8;
+
+    font-size:28px;
+
+    text-align:center;
+
+    z-index:2;
+
+    font-family:monospace;
+
+    text-shadow:0 0 20px #38bdf8;
+}
+
+#scan-status{
+    margin-top:30px;
+
+    color:#94a3b8;
+
+    font-family:monospace;
+
+    letter-spacing:2px;
+}
