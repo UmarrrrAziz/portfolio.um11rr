@@ -22,7 +22,6 @@ body {
     align-items: center;
     text-align: center;
     position: relative;
-    background: linear-gradient(135deg, #111827, #1e293b, #0f172a);
 }
 
 .overlay {
