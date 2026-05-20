@@ -120,7 +120,8 @@ async function sendMessage(){
     try{
 
         const response = await fetch(
-        "https://api.openai.com/v1/chat/completions",
+        "https://api.groq.com/openai/v1/chat/completions",
+   
         {
 
             method:"POST",
