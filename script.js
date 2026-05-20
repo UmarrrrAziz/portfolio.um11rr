@@ -173,4 +173,18 @@ async function sendMessage(){
     }
 
 }
+function toggleChat(){
 
+    const chat =
+    document.getElementById("jarvisChat");
+
+    if(chat.style.display === "flex"){
+
+        chat.style.display = "none";
+
+    }else{
+
+        chat.style.display = "flex";
+
+    }
+}
