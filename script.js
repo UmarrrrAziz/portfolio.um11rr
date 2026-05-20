@@ -130,7 +130,7 @@ async function sendMessage(){
                 "Content-Type":"application/json",
 
                 "Authorization":
-                "Bearer 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"
+                "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"
 
             },
 
