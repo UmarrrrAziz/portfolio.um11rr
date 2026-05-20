@@ -1,66 +1,96 @@
-// script.js
+// =========================
+// PORTFOLIO LOADED
+// =========================
 
 console.log("Portfolio Loaded Successfully!");
+
+
+// =========================
+// INTRO LOADER
+// =========================
+
 window.addEventListener("load", function(){
 
-    const loader = document.getElementById("loader");
+    const loader =
+    document.getElementById("loader");
 
-    setTimeout(() => {
+    if(loader){
 
-        loader.style.opacity = "0";
+        setTimeout(() => {
 
-        loader.style.visibility = "hidden";
+            loader.style.opacity = "0";
 
-    }, 2000);
+            loader.style.visibility = "hidden";
+
+        }, 2000);
+
+    }
 
 });
-/* AI FACE SCAN */
+
+
+// =========================
+// AI FACE SCAN
+// =========================
 
 window.addEventListener("load", ()=>{
 
-    const scanner = document.getElementById("scanner");
+    const scanner =
+    document.getElementById("scanner");
 
-    const status = document.getElementById("scan-status");
+    const status =
+    document.getElementById("scan-status");
 
-    const messages = [
+    if(scanner && status){
 
-        "Initializing AI Systems",
+        const messages = [
 
-        "Scanning Face",
+            "Initializing AI Systems",
 
-        "Identity Verified",
+            "Scanning Face",
 
-        "Access Granted",
+            "Identity Verified",
 
-        "Welcome Umar Bin Abdul Aziz"
+            "Access Granted",
 
-    ];
+            "Welcome Umar Bin Abdul Aziz 🚀"
 
-    let i = 0;
+        ];
 
-    const interval = setInterval(()=>{
+        let i = 0;
 
-        status.innerText = messages[i];
+        const interval = setInterval(()=>{
 
-        i++;
+            status.innerText =
+            messages[i];
 
-        if(i >= messages.length){
+            i++;
 
-            clearInterval(interval);
+            if(i >= messages.length){
 
-            setTimeout(()=>{
+                clearInterval(interval);
 
-                scanner.style.opacity = "0";
+                setTimeout(()=>{
 
-                scanner.style.visibility = "hidden";
+                    scanner.style.opacity = "0";
 
-            },1000);
+                    scanner.style.visibility = "hidden";
 
-        }
+                },1000);
 
-    },1200);
+            }
+
+        },1200);
+
+    }
 
 });
+
+
+// =========================
+// JARVIS CHAT TOGGLE
+// =========================
+
 function toggleChat(){
 
     const chat =
@@ -70,12 +100,20 @@ function toggleChat(){
 
         chat.style.display = "none";
 
-    }else{
+    }
+
+    else{
 
         chat.style.display = "block";
 
     }
+
 }
+
+
+// =========================
+// SEND MESSAGE
+// =========================
 
 async function sendMessage(){
 
@@ -90,6 +128,9 @@ async function sendMessage(){
 
     if(userText.trim() === "") return;
 
+
+    // USER MESSAGE
+
     const userMessage =
     document.createElement("div");
 
@@ -102,6 +143,9 @@ async function sendMessage(){
     chatBody.appendChild(userMessage);
 
     input.value = "";
+
+
+    // BOT THINKING
 
     const botMessage =
     document.createElement("div");
@@ -117,44 +161,75 @@ async function sendMessage(){
     chatBody.scrollTop =
     chatBody.scrollHeight;
 
+
     try{
 
-      const response = await fetch(
-"https://api.groq.com/openai/v1/chat/completions",
-{
+        const response = await fetch(
 
-    method:"POST",
+        "https://api.groq.com/openai/v1/chat/completions",
 
-    headers:{
+        {
 
-        "Content-Type":"application/json",
+            method:"POST",
 
-        "Authorization":
-        "Bearer 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"
+            headers:{
 
-    },
+                "Content-Type":"application/json",
 
-    body:JSON.stringify({
+                "Authorization":
+                "Bearer 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"
 
-        model:"llama3-8b-8192",
-
-        messages:[
-
-            {
-                role:"system",
-
-                content:
-                "You are Umar's futuristic AI assistant."
             },
 
-            {
-                role:"user",
+            body:JSON.stringify({
 
-                content:userText
-            }
+                model:"llama3-8b-8192",
 
-        ]
+                messages:[
 
-    })
+                    {
 
-});
+                        role:"system",
+
+                        content:
+                        "You are Umar's futuristic AI assistant."
+
+                    },
+
+                    {
+
+                        role:"user",
+
+                        content:userText
+
+                    }
+
+                ]
+
+            })
+
+        });
+
+
+        const data =
+        await response.json();
+
+
+        botMessage.textContent =
+
+        data.choices[0].message.content;
+
+    }
+
+
+    catch(error){
+
+        botMessage.textContent =
+
+        "Error connecting to AI.";
+
+        console.log(error);
+
+    }
+
+}
