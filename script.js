@@ -29,11 +29,9 @@ window.addEventListener("load", function(){
 });
 
 
-// =========================
-// AI FACE SCAN
-// =========================
+/* AI FACE SCAN */
 
-window.addEventListener("load", ()=>{
+window.addEventListener("load", () => {
 
     const scanner =
     document.getElementById("scanner");
@@ -41,51 +39,53 @@ window.addEventListener("load", ()=>{
     const status =
     document.getElementById("scan-status");
 
-    if(scanner && status){
+    // AGAR ELEMENT NA MILE TOH EXIT
+    if(!scanner || !status){
+        return;
+    }
 
-        const messages = [
+    const messages = [
 
-            "Initializing AI Systems",
+        "Initializing AI Systems",
+        "Scanning Face",
+        "Identity Verified",
+        "Access Granted",
+        "Welcome Umar Bin Abdul Aziz 🚀"
 
-            "Scanning Face",
+    ];
 
-            "Identity Verified",
+    let i = 0;
 
-            "Access Granted",
+    status.innerText = messages[0];
 
-            "Welcome Umar Bin Abdul Aziz 🚀"
+    const interval = setInterval(() => {
 
-        ];
+        i++;
 
-        let i = 0;
-
-        const interval = setInterval(()=>{
+        if(i < messages.length){
 
             status.innerText =
             messages[i];
 
-            i++;
+        }
 
-            if(i >= messages.length){
+        else{
 
-                clearInterval(interval);
+            clearInterval(interval);
 
-                setTimeout(()=>{
+            setTimeout(() => {
 
-                    scanner.style.opacity = "0";
+                scanner.style.opacity = "0";
 
-                    scanner.style.visibility = "hidden";
+                scanner.style.visibility = "hidden";
 
-                },1000);
+            },1000);
 
-            }
+        }
 
-        },1200);
-
-    }
+    },1200);
 
 });
-
 
 // =========================
 // JARVIS CHAT TOGGLE
