@@ -119,60 +119,42 @@ async function sendMessage(){
 
     try{
 
-        const response = await fetch(
-        "https://api.groq.com/openai/v1/chat/completions",
-   
-        {
+      const response = await fetch(
+"https://api.groq.com/openai/v1/chat/completions",
+{
 
-            method:"POST",
+    method:"POST",
 
-            headers:{
+    headers:{
 
-                "Content-Type":"application/json",
+        "Content-Type":"application/json",
 
-                "Authorization":
-                "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"
+        "Authorization":
+        "Bearer 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"
 
+    },
+
+    body:JSON.stringify({
+
+        model:"llama3-8b-8192",
+
+        messages:[
+
+            {
+                role:"system",
+
+                content:
+                "You are Umar's futuristic AI assistant."
             },
 
-            body:JSON.stringify({
+            {
+                role:"user",
 
-                model:"llama3-8b-8192",
+                content:userText
+            }
 
-                messages:[
+        ]
 
-                    {
-                        role:"system",
+    })
 
-                        content:
-                        "You are Umar's AI assistant."
-                    },
-
-                    {
-                        role:"user",
-
-                        content:userText
-                    }
-
-                ]
-
-            })
-
-        });
-
-        const data =
-        await response.json();
-
-        botMessage.textContent =
-        data.choices[0].message.content;
-
-    }
-
-    catch(error){
-
-        botMessage.textContent =
-        "Error connecting to AI.";
-
-    }
-
-}
+});
