@@ -137,7 +137,7 @@ async function sendMessage(){
 
             body:JSON.stringify({
 
-                model:"gpt-3.5-turbo",
+                model:"llama3-8b-8192",
 
                 messages:[
 
