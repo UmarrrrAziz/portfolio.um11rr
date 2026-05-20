@@ -503,74 +503,34 @@ html {
 
 .jarvis-btn{
     position:fixed;
-
-    bottom:30px;
-    right:30px;
-
-    width:65px;
-    height:65px;
-
+    bottom:20px;
+    right:20px;
+    width:70px;
+    height:70px;
     border-radius:50%;
-
     background:#38bdf8;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
-    color:white;
-
-    font-size:28px;
-
+    font-size:30px;
     cursor:pointer;
-
     z-index:9999;
-
     box-shadow:0 0 25px #38bdf8;
-
-    animation:pulseAI 2s infinite;
-}
-
-@keyframes pulseAI{
-
-    0%{
-        transform:scale(1);
-    }
-
-    50%{
-        transform:scale(1.1);
-    }
-
-    100%{
-        transform:scale(1);
-    }
-
 }
 
 .jarvis-chat{
     position:fixed;
-
-    bottom:110px;
-    right:30px;
-
-    width:350px;
-    max-width:90%;
-
-    background:rgba(15,23,42,0.95);
-
-    border:1px solid #38bdf8;
-
+    bottom:100px;
+    right:20px;
+    width:320px;
+    height:450px;
+    background:#0f172a;
+    border:2px solid #38bdf8;
     border-radius:20px;
-
-    overflow:hidden;
-
     display:none;
-
+    flex-direction:column;
+    overflow:hidden;
     z-index:9999;
-
-    backdrop-filter:blur(10px);
-
-    box-shadow:0 0 40px rgba(56,189,248,0.3);
 }
 
 .jarvis-header{
