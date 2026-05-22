@@ -700,6 +700,21 @@ html {
 
 }
 
+.solar-system h2{
+
+    position:absolute;
+
+    top:30px;
+
+    left:30px;
+
+    z-index:10;
+
+    color:white;
+
+    font-size:40px;
+}
+
 #spaceCanvas{
 
     width:100%;
