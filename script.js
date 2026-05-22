@@ -269,13 +269,18 @@ scene.add(sun);
 const earthGeometry =
 new THREE.SphereGeometry(2,64,64);
 
+const textureLoader =
+new THREE.TextureLoader();
+
+const earthTexture =
+textureLoader.load("earth.jpg");
+
 const earthMaterial =
 new THREE.MeshStandardMaterial({
 
-    color:0x2266ff
+    map:earthTexture
 
 });
-
 const earth =
 new THREE.Mesh(
 
