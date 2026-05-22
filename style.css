@@ -700,19 +700,41 @@ html {
 
 }
 
-.solar-system h2{
+/* SOLAR SYSTEM */
+
+.solar-system{
+
+    position:relative;
+
+    width:100%;
+
+    height:100vh;
+
+    overflow:hidden;
+
+    background:
+    radial-gradient(circle,
+    #020617,
+    #000000);
+
+}
+
+.space-title{
 
     position:absolute;
 
     top:30px;
 
-    left:30px;
+    left:40px;
 
     z-index:10;
 
     color:white;
 
-    font-size:40px;
+    font-size:45px;
+
+    letter-spacing:2px;
+
 }
 
 #spaceCanvas{
