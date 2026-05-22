@@ -228,6 +228,19 @@ renderer.setSize(
 
 camera.position.z = 40;
 
+const controls =
+new THREE.OrbitControls(
+
+    camera,
+
+    renderer.domElement
+
+);
+
+controls.enableDamping = true;
+
+controls.dampingFactor = 0.05;
+
 /* SUN */
 
 const sunGeometry =
@@ -361,7 +374,9 @@ function animate(){
 
     earth.position.z =
     Math.sin(Date.now()*0.0005)*15;
-
+    
+controls.update();
+    
     renderer.render(
 
         scene,
