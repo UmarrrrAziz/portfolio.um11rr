@@ -336,8 +336,10 @@
     
 <section class="solar-system">
 
-    <h2>
+    <h2 class="space-title">
+
         Neural Space System
+
     </h2>
 
     <canvas id="spaceCanvas"></canvas>
@@ -507,144 +509,7 @@ particlesJS("particles-js", {
 <!-- JS -->
 
 <script src="script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>  
 </body>
 </html>
-<script>
 
-const scene = new THREE.Scene();
-
-const camera =
-new THREE.PerspectiveCamera(
-75,
-window.innerWidth/window.innerHeight,
-0.1,
-1000
-);
-
-const renderer =
-new THREE.WebGLRenderer({
-
-    canvas:
-    document.getElementById("spaceCanvas"),
-
-    alpha:true
-
-});
-
-renderer.setSize(
-window.innerWidth,
-window.innerHeight
-);
-
-camera.position.z = 30;
-
-/* SUN */
-
-const sunGeometry =
-new THREE.SphereGeometry(3,32,32);
-
-const sunMaterial =
-new THREE.MeshBasicMaterial({
-
-    color:0xffaa00
-
-});
-
-const sun =
-new THREE.Mesh(
-sunGeometry,
-sunMaterial
-);
-
-scene.add(sun);
-
-/* PLANET */
-
-const planetGeometry =
-new THREE.SphereGeometry(1,32,32);
-
-const planetMaterial =
-new THREE.MeshBasicMaterial({
-
-    color:0x38bdf8
-
-});
-
-const planet =
-new THREE.Mesh(
-planetGeometry,
-planetMaterial
-);
-
-planet.position.x = 10;
-
-scene.add(planet);
-
-/* STARS */
-
-const starsGeometry =
-new THREE.BufferGeometry();
-
-const starsCount = 5000;
-
-const posArray =
-new Float32Array(starsCount * 3);
-
-for(let i=0;i<starsCount*3;i++){
-
-    posArray[i] =
-    (Math.random()-0.5)*200;
-
-}
-
-starsGeometry.setAttribute(
-
-    "position",
-
-    new THREE.BufferAttribute(
-        posArray,
-        3
-    )
-
-);
-
-const starsMaterial =
-new THREE.PointsMaterial({
-
-    size:0.1
-
-});
-
-const starsMesh =
-new THREE.Points(
-starsGeometry,
-starsMaterial
-);
-
-scene.add(starsMesh);
-
-/* ANIMATION */
-
-function animate(){
-
-    requestAnimationFrame(animate);
-
-    sun.rotation.y += 0.003;
-
-    planet.rotation.y += 0.01;
-
-    planet.position.x =
-    Math.cos(Date.now()*0.001)*10;
-
-    planet.position.z =
-    Math.sin(Date.now()*0.001)*10;
-
-    renderer.render(scene,camera);
-
-}
-
-animate();
-
-</script>
