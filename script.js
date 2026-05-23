@@ -22,6 +22,8 @@ window.addEventListener("load", function(){
 
             loader.style.visibility = "hidden";
 
+            loader.style.display = "none";
+            
         }, 2000);
 
     }
