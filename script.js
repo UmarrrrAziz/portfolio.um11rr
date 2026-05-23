@@ -1,7 +1,7 @@
 // =========================
 // PORTFOLIO LOADED
 // =========================
-
+console.log("SCRIPT RUNNING");
 console.log("Portfolio Loaded Successfully!");
 
 
