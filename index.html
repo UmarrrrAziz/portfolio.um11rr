@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Umar Bin Abdul Aziz builds thoughtful digital experiences shaped by gaming instincts, systems curiosity, and clean interface design.">
+    <title>Umar Bin Abdul Aziz | Digital Universe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <header class="topbar">
+        <a class="brand" href="#top" aria-label="Go to top">
+            <span class="brand-mark">UA</span>
+            <span class="brand-copy">
+                <strong>Umar Bin Abdul Aziz</strong>
+                <small>Digital universe</small>
+            </span>
+        </a>
+
+        <nav class="topnav" aria-label="Primary navigation">
+            <a href="#about">About</a>
+            <a href="#systems">Systems</a>
+            <a href="#work">Work</a>
+            <a href="#agency">Solutions</a>
+            <a href="#offers">Offers</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="topbar-actions">
+            <button class="command-trigger" id="commandTrigger" type="button" aria-expanded="false"
+                aria-controls="commandPalette">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <span>Explore</span>
+                <kbd>/</kbd>
+            </button>
+            <a class="topbar-mail" href="mailto:umerbinabdulaziz88@gmail.com">Say hello</a>
+            <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileNav"
+                aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+        </div>
+    </header>
+
+    <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+        <a href="#about">About</a>
+        <a href="#systems">Systems</a>
+        <a href="#work">Work</a>
+        <a href="#agency">Solutions</a>
+        <a href="#offers">Offers</a>
+        <a href="#contact">Contact</a>
+        <button class="mobile-command" type="button" data-open-command="true">Open command palette</button>
+    </div>
+
+    <main id="top">
+        <section class="hero section">
+            <div class="hero-panel reveal">
+                <div class="identity-card panel">
+                    <div class="identity-top">
+                        <div>
+                            <p class="panel-kicker">Profile</p>
+                            <h2>Umar Bin Abdul Aziz</h2>
+                        </div>
+                        <span class="status-pill">
+                            <span class="status-dot" aria-hidden="true"></span>
+                            Open to learning and building
+                        </span>
+                    </div>
+
+                    <div class="portrait-shell">
+                        <img src="images/umar.jpg.webp" alt="Portrait of Umar Bin Abdul Aziz" class="portrait">
+                        <div class="portrait-orbit orbit-one" aria-hidden="true"></div>
+                        <div class="portrait-orbit orbit-two" aria-hidden="true"></div>
+                    </div>
+
+                    <div class="identity-meta">
+                        <div>
+                            <span>Location mode</span>
+                            <strong>India - digital-first</strong>
+                        </div>
+                        <div>
+                            <span>Competitive arena</span>
+                            <strong>BGMI - ID 5113772029</strong>
+                        </div>
+                        <div>
+                            <span>Building with</span>
+                            <strong>Python - Next.js - HTML - CSS - JS</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-stack">
+                    <article class="floating-panel panel reveal">
+                        <div class="panel-head">
+                            <p class="panel-kicker">Live now</p>
+                            <span class="live-time" id="liveTime">00:00</span>
+                        </div>
+                        <p>Studying modern product design patterns, interface detail, and how digital systems behave at
+                            scale.</p>
+                    </article>
+                    <article class="floating-panel panel reveal">
+                        <div class="panel-head">
+                            <p class="panel-kicker">What I optimize for</p>
+                        </div>
+                        <ul class="micro-list">
+                            <li>Clarity over clutter</li>
+                            <li>Fast interaction feedback</li>
+                            <li>Interfaces people want to keep exploring</li>
+                        </ul>
+                    </article>
+                    <article class="floating-panel panel reveal">
+                        <div class="panel-head">
+                            <p class="panel-kicker">Explore next</p>
+                        </div>
+                        <div class="hero-actions">
+                            <a class="btn btn-primary magnetic" href="#work">
+                                <span>See selected work</span>
+                                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                            </a>
+                            <a class="btn btn-secondary magnetic" href="#offers">
+                                <span>Browse offers</span>
+                                <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i>
+                            </a>
+                            <button class="btn btn-secondary magnetic" type="button" data-open-command="true">
+                                <span>Open command palette</span>
+                                <i class="fa-solid fa-sliders" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="metrics section reveal">
+            <article class="metric-card panel">
+                <span class="metric-index">01</span>
+                <strong data-count="4">0</strong>
+                <p>core disciplines actively sharpening</p>
+            </article>
+            <article class="metric-card panel">
+                <span class="metric-index">02</span>
+                <strong data-count="100">0</strong>
+                <p>percent intention on craft and growth</p>
+            </article>
+            <article class="metric-card panel">
+                <span class="metric-index">03</span>
+                <strong data-count="24">0</strong>
+                <p>hour curiosity cycle for systems and interfaces</p>
+            </article>
+            <article class="metric-card panel">
+                <span class="metric-index">04</span>
+                <strong data-count="1">0</strong>
+                <p>clear personal universe, designed to keep unfolding</p>
+            </article>
+        </section>
+
+        <section class="section story-grid" id="about">
+            <div class="section-heading reveal">
+                <p class="eyebrow">About</p>
+                <h2>A profile built more like a product than a resume.</h2>
+            </div>
+
+            <div class="story-columns">
+                <article class="story-card panel reveal">
+                    <p>
+                        I come from competitive gaming, which shaped how I think about pressure, reaction, pattern
+                        recognition, and iteration. That mindset now feeds the way I approach code and digital
+                        experiences.
+                    </p>
+                </article>
+                <article class="story-card panel reveal">
+                    <p>
+                        I'm especially interested in UI systems, social platforms, product behavior, digital identity,
+                        AI concepts, and the design details that quietly make modern software feel premium.
+                    </p>
+                </article>
+                <article class="story-card panel reveal">
+                    <p>
+                        This site is designed as a personal operating layer: part portfolio, part signal map, part
+                        invitation to explore how I think.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section systems-section" id="systems">
+            <div class="section-heading reveal">
+                <p class="eyebrow">Systems</p>
+                <h2>The way I like digital products to feel.</h2>
+            </div>
+
+            <div class="systems-layout">
+                <div class="systems-track">
+                    <article class="system-card panel reveal">
+                        <div class="system-number">01</div>
+                        <h3>Calm surfaces</h3>
+                        <p>Less visual noise, stronger hierarchy, smoother transitions, and room for content to breathe.</p>
+                    </article>
+                    <article class="system-card panel reveal">
+                        <div class="system-number">02</div>
+                        <h3>Useful motion</h3>
+                        <p>Animation should guide attention, explain structure, and reward interaction without shouting.</p>
+                    </article>
+                    <article class="system-card panel reveal">
+                        <div class="system-number">03</div>
+                        <h3>Explorable architecture</h3>
+                        <p>Interfaces should encourage curiosity through layered detail, not through distraction.</p>
+                    </article>
+                </div>
+
+                <aside class="systems-console panel reveal">
+                    <div class="console-top">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="console-body">
+                        <p class="console-label">Operating principles</p>
+                        <div class="principle">
+                            <span>Clarity</span>
+                            <div class="principle-bar"><span style="width: 94%"></span></div>
+                        </div>
+                        <div class="principle">
+                            <span>Curiosity</span>
+                            <div class="principle-bar"><span style="width: 89%"></span></div>
+                        </div>
+                        <div class="principle">
+                            <span>Craft</span>
+                            <div class="principle-bar"><span style="width: 91%"></span></div>
+                        </div>
+                        <div class="principle">
+                            <span>Discipline</span>
+                            <div class="principle-bar"><span style="width: 96%"></span></div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section class="section work-section" id="work">
+            <div class="section-heading reveal">
+                <p class="eyebrow">Selected directions</p>
+                <h2>Ideas and product territories I want to push further.</h2>
+            </div>
+
+            <div class="project-showcase">
+                <article class="project-card panel reveal spotlight-card" data-project="portfolio" tabindex="0">
+                    <div class="project-meta">
+                        <span>01</span>
+                        <span>Experience design</span>
+                    </div>
+                    <h3>Personal site as an immersive product</h3>
+                    <p>
+                        A digital universe with layered storytelling, thoughtful motion, and exploration-first
+                        navigation instead of a flat portfolio template.
+                    </p>
+                    <div class="tags">
+                        <span>UI Systems</span>
+                        <span>Motion</span>
+                        <span>HTML/CSS/JS</span>
+                    </div>
+                </article>
+
+                <article class="project-card panel reveal spotlight-card" data-project="security" tabindex="0">
+                    <div class="project-meta">
+                        <span>02</span>
+                        <span>Research direction</span>
+                    </div>
+                    <h3>Identity, security, and recovery thinking</h3>
+                    <p>
+                        Exploring safer account flows, trust signals, and how people navigate digital identity under
+                        pressure.
+                    </p>
+                    <div class="tags">
+                        <span>Security</span>
+                        <span>Systems</span>
+                        <span>UX</span>
+                    </div>
+                </article>
+
+                <article class="project-card panel reveal spotlight-card" data-project="social" tabindex="0">
+                    <div class="project-meta">
+                        <span>03</span>
+                        <span>Platform curiosity</span>
+                    </div>
+                    <h3>How social systems shape attention</h3>
+                    <p>
+                        Studying reach, recommendation patterns, creator behavior, and the product mechanics behind
+                        modern platforms.
+                    </p>
+                    <div class="tags">
+                        <span>Algorithms</span>
+                        <span>AI</span>
+                        <span>Product</span>
+                    </div>
+                </article>
+            </div>
+
+            <div class="work-inspector panel reveal">
+                <div class="inspector-copy">
+                    <p class="panel-kicker">Inspector</p>
+                    <h3 id="inspectorTitle">Personal site as an immersive product</h3>
+                    <p id="inspectorText">
+                        This direction treats the website like a product surface: stronger flow, clearer hierarchy, and
+                        more reasons to keep exploring instead of bouncing after one scroll.
+                    </p>
+                </div>
+                <div class="inspector-grid">
+                    <div>
+                        <span>Energy</span>
+                        <strong id="inspectorEnergy">Focused</strong>
+                    </div>
+                    <div>
+                        <span>Mode</span>
+                        <strong id="inspectorMode">Interactive storytelling</strong>
+                    </div>
+                    <div>
+                        <span>Priority</span>
+                        <strong id="inspectorPriority">Feel and structure</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section timeline-section">
+            <div class="section-heading reveal">
+                <p class="eyebrow">Journey map</p>
+                <h2>Where I'm headed, and how the system is evolving.</h2>
+            </div>
+
+            <div class="timeline">
+                <article class="timeline-step panel reveal">
+                    <span class="timeline-dot" aria-hidden="true"></span>
+                    <h3>Foundation</h3>
+                    <p>Strengthening HTML, CSS, JavaScript, Python, and interface judgment through focused practice.</p>
+                </article>
+                <article class="timeline-step panel reveal">
+                    <span class="timeline-dot" aria-hidden="true"></span>
+                    <h3>Product sense</h3>
+                    <p>Learning from the world's best digital products and studying why certain experiences feel premium.</p>
+                </article>
+                <article class="timeline-step panel reveal">
+                    <span class="timeline-dot" aria-hidden="true"></span>
+                    <h3>Systems depth</h3>
+                    <p>Exploring security, AI, platform mechanics, and how large-scale digital systems earn trust.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section agency-section" id="agency">
+            <div class="agency-shell panel reveal">
+                <div class="agency-particles" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <div class="agency-hero">
+                    <div class="agency-copy">
+                        <p class="eyebrow">Digital platform desk</p>
+                        <h2>Digital Platform Solutions</h2>
+                        <p class="agency-subtitle">
+                            Helping creators, influencers, businesses, and brands manage platform-related challenges.
+                        </p>
+                    </div>
+
+                    <div class="agency-highlight panel">
+                        <p class="panel-kicker">Agency mode</p>
+                        <h3>Cyberpunk polish with a security-first workflow.</h3>
+                        <p>
+                            Built to feel like a premium digital protection studio: structured case handling, calm
+                            communication, and strategy shaped by platform behavior, trust signals, and creator needs.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="agency-services">
+                    <article class="service-card panel reveal">
+                        <span class="service-index">01</span>
+                        <h3>Account Recovery Assistance</h3>
+                        <p>Support for recovery flow planning, evidence organization, escalation readiness, and next-step clarity.</p>
+                    </article>
+                    <article class="service-card panel reveal">
+                        <span class="service-index">02</span>
+                        <h3>Copyright &amp; Content Protection</h3>
+                        <p>Guidance around content misuse, ownership signals, takedown pathways, and protective workflow design.</p>
+                    </article>
+                    <article class="service-card panel reveal">
+                        <span class="service-index">03</span>
+                        <h3>Platform Policy Guidance</h3>
+                        <p>Interpretation support for platform rules, enforcement patterns, appeal framing, and safer account decisions.</p>
+                    </article>
+                    <article class="service-card panel reveal">
+                        <span class="service-index">04</span>
+                        <h3>Brand Protection Consulting</h3>
+                        <p>Strategic reviews for impersonation risk, reputation concerns, account ownership signals, and response planning.</p>
+                    </article>
+                    <article class="service-card panel reveal">
+                        <span class="service-index">05</span>
+                        <h3>Meta Business Suite Support</h3>
+                        <p>Practical help around business tools, page structure, access issues, and operational setup clarity.</p>
+                        <a class="service-link" href="https://t.me/um11rr" target="_blank" rel="noreferrer">
+                            <i class="fa-brands fa-telegram brand-telegram" aria-hidden="true"></i>
+                            <span>Telegram for Meta Support</span>
+                        </a>
+                    </article>
+                    <article class="service-card panel reveal">
+                        <span class="service-index">06</span>
+                        <h3>YouTube Channel Management Support</h3>
+                        <p>Channel-side guidance for structure, ownership hygiene, support workflows, and risk-aware management decisions.</p>
+                    </article>
+                    <article class="service-card panel reveal">
+                        <span class="service-index">07</span>
+                        <h3>Creator Support &amp; Optimization</h3>
+                        <p>Hands-on help for creator operations, account health awareness, process cleanup, and platform-side stability.</p>
+                    </article>
+                    <article class="service-card panel reveal">
+                        <span class="service-index">08</span>
+                        <h3>Social Media Security Consulting</h3>
+                        <p>Security-conscious reviews focused on access control, suspicious activity response, and safer platform habits.</p>
+                    </article>
+                    <article class="service-card panel reveal">
+                        <span class="service-index">09</span>
+                        <h3>Community Guidelines Consultation</h3>
+                        <p>Clearer understanding of moderation risk, content boundaries, and how to reduce repeated enforcement issues.</p>
+                    </article>
+                    <article class="service-card panel reveal">
+                        <span class="service-index">10</span>
+                        <h3>Business Account Setup &amp; Optimization</h3>
+                        <p>Structured setup guidance for professional accounts, operational readiness, and stronger platform positioning.</p>
+                    </article>
+                </div>
+
+                <div class="agency-achievements">
+                    <article class="agency-stat panel reveal">
+                        <span class="metric-index">01</span>
+                        <strong data-count="100" data-suffix="+">0</strong>
+                        <p>Cases Successfully Handled</p>
+                    </article>
+                    <article class="agency-stat panel reveal">
+                        <span class="metric-index">02</span>
+                        <strong data-count="500" data-suffix="+">0</strong>
+                        <p>Support Requests Assisted</p>
+                    </article>
+                    <article class="agency-stat panel reveal">
+                        <span class="metric-index">03</span>
+                        <strong data-count="1000" data-suffix="+">0</strong>
+                        <p>Hours of Platform Research</p>
+                    </article>
+                    <article class="agency-stat panel reveal">
+                        <span class="metric-index">04</span>
+                        <strong data-count="95" data-suffix="%">0</strong>
+                        <p>Positive Client Feedback</p>
+                    </article>
+                </div>
+
+                <div class="agency-layers">
+                    <div class="agency-column">
+                        <div class="section-heading reveal">
+                            <p class="eyebrow">Past work</p>
+                            <h2>Completed cases mapped like a futuristic operations timeline.</h2>
+                        </div>
+
+                        <div class="case-timeline">
+                            <article class="case-card panel reveal">
+                                <span class="case-marker">01</span>
+                                <div>
+                                    <p class="panel-kicker">Account recovery case</p>
+                                    <h3>Creator account ownership restoration</h3>
+                                    <p>Organized evidence, clarified escalation routes, and rebuilt confidence around the recovery process.</p>
+                                </div>
+                            </article>
+                            <article class="case-card panel reveal">
+                                <span class="case-marker">02</span>
+                                <div>
+                                    <p class="panel-kicker">Copyright protection case</p>
+                                    <h3>Duplicate content misuse response flow</h3>
+                                    <p>Mapped reporting options, documented ownership signals, and created a cleaner content-protection workflow.</p>
+                                </div>
+                            </article>
+                            <article class="case-card panel reveal">
+                                <span class="case-marker">03</span>
+                                <div>
+                                    <p class="panel-kicker">Brand protection project</p>
+                                    <h3>Impersonation risk review for a growing brand</h3>
+                                    <p>Reviewed identity signals, response priorities, and protective steps for a stronger trust posture.</p>
+                                </div>
+                            </article>
+                            <article class="case-card panel reveal">
+                                <span class="case-marker">04</span>
+                                <div>
+                                    <p class="panel-kicker">Business setup project</p>
+                                    <h3>Professional account and operations cleanup</h3>
+                                    <p>Improved structure across connected business surfaces with clearer access, roles, and workflow logic.</p>
+                                </div>
+                            </article>
+                            <article class="case-card panel reveal">
+                                <span class="case-marker">05</span>
+                                <div>
+                                    <p class="panel-kicker">Creator support project</p>
+                                    <h3>Channel support system for stability and growth</h3>
+                                    <p>Helped shape a calmer support process around policy awareness, account hygiene, and communication speed.</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="agency-column">
+                        <div class="section-heading reveal">
+                            <p class="eyebrow">Trust layer</p>
+                            <h2>How the work stays professional, private, and structured.</h2>
+                        </div>
+
+                        <div class="trust-grid">
+                            <article class="trust-card panel reveal">
+                                <h3>Professional Workflow</h3>
+                                <p>Cases move through clear review, documentation, action planning, and follow-up steps.</p>
+                            </article>
+                            <article class="trust-card panel reveal">
+                                <h3>Privacy Focused Approach</h3>
+                                <p>Information is handled with restraint, careful access habits, and a need-to-know mindset.</p>
+                            </article>
+                            <article class="trust-card panel reveal">
+                                <h3>Client Confidentiality</h3>
+                                <p>Sensitive platform situations stay discreet, especially when reputation and account access are involved.</p>
+                            </article>
+                            <article class="trust-card panel reveal">
+                                <h3>Fast Communication</h3>
+                                <p>Updates stay direct, practical, and easy to act on during stressful platform-side issues.</p>
+                            </article>
+                            <article class="trust-card panel reveal">
+                                <h3>Detailed Case Analysis</h3>
+                                <p>Each situation is examined for root cause, risk signals, and the strongest next move.</p>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="agency-bottom">
+                    <div class="agency-column">
+                        <div class="section-heading reveal">
+                            <p class="eyebrow">Testimonials</p>
+                            <h2>Client feedback shaped like real-world digital support outcomes.</h2>
+                        </div>
+
+                        <div class="testimonials-grid">
+                            <article class="testimonial-card panel reveal">
+                                <p>"My recovery case felt impossible at first, but the process became clear and organized very quickly."</p>
+                                <strong>Areeb K.</strong>
+                                <span>Creator account support</span>
+                            </article>
+                            <article class="testimonial-card panel reveal">
+                                <p>"Professional communication, fast updates, and a much better understanding of what the platform was actually asking for."</p>
+                                <strong>Sarah M.</strong>
+                                <span>Business account assistance</span>
+                            </article>
+                            <article class="testimonial-card panel reveal">
+                                <p>"The brand protection guidance helped us respond with less panic and more structure."</p>
+                                <strong>Rizwan A.</strong>
+                                <span>Brand protection project</span>
+                            </article>
+                            <article class="testimonial-card panel reveal">
+                                <p>"What stood out most was the privacy-focused approach and the calm way the case was handled."</p>
+                                <strong>Nadia T.</strong>
+                                <span>Security-conscious client</span>
+                            </article>
+                            <article class="testimonial-card panel reveal">
+                                <p>"The platform policy explanations were simple, practical, and actually useful for our next steps."</p>
+                                <strong>Daniel R.</strong>
+                                <span>Creator support consultation</span>
+                            </article>
+                            <article class="testimonial-card panel reveal">
+                                <p>"Fast replies, no confusing language, and a much more professional support process than I expected."</p>
+                                <strong>Hafsa I.</strong>
+                                <span>Meta Business Suite support</span>
+                            </article>
+                            <article class="testimonial-card panel reveal">
+                                <p>"The detailed case analysis helped us understand both the issue and the safest path forward."</p>
+                                <strong>Usman P.</strong>
+                                <span>Brand protection consultation</span>
+                            </article>
+                            <article class="testimonial-card panel reveal">
+                                <p>"I appreciated how security-aware everything felt. The advice was practical and clearly experience-based."</p>
+                                <strong>Elena S.</strong>
+                                <span>Social media security consulting</span>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="agency-column">
+                        <div class="why-work-card panel reveal">
+                            <p class="panel-kicker">Why work with me</p>
+                            <h3>Platform support that feels sharp, transparent, and security-aware.</h3>
+                            <ul class="why-work-list">
+                                <li>Experience with multiple social platforms</li>
+                                <li>Strong understanding of platform policies</li>
+                                <li>Professional communication</li>
+                                <li>Security-conscious approach</li>
+                                <li>Transparent process</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section offers-section" id="offers">
+            <div class="section-heading reveal">
+                <p class="eyebrow">Offers</p>
+                <h2>Growth packages presented like a product catalog, not a loud popup.</h2>
+            </div>
+
+            <div class="offers-shell">
+                <article class="offers-intro panel reveal">
+                    <p class="panel-kicker">Private growth desk</p>
+                    <h3>Social media support, packaged with more clarity and less clutter.</h3>
+                    <p>
+                        If you want fast access to follower, view, like, or subscriber packages, this section keeps
+                        everything organized in one calm place. For orders, the handoff still goes through Telegram.
+                    </p>
+                    <div class="offers-contact-row">
+                        <a class="btn btn-primary magnetic" href="https://t.me/um11rr" target="_blank" rel="noreferrer">
+                            Open Telegram
+                        </a>
+                        <span class="offers-note">@um11rr for details, delivery timing, and custom requests</span>
+                    </div>
+                </article>
+
+                <div class="offers-grid">
+                    <article class="offer-card panel reveal">
+                        <div class="offer-head">
+                            <div>
+                                <p class="panel-kicker">Instagram</p>
+                                <h3>Followers</h3>
+                            </div>
+                            <i class="fa-brands fa-instagram brand-instagram" aria-hidden="true"></i>
+                        </div>
+                        <ul class="offer-list">
+                            <li><span>1k Followers</span><strong>249/-</strong></li>
+                            <li><span>5k Followers</span><strong>1099/-</strong></li>
+                            <li><span>10k Followers</span><strong>1999/-</strong></li>
+                        </ul>
+                        <a class="offer-link" href="https://t.me/um11rr" target="_blank" rel="noreferrer">Order via Telegram</a>
+                    </article>
+
+                    <article class="offer-card panel reveal">
+                        <div class="offer-head">
+                            <div>
+                                <p class="panel-kicker">Instagram</p>
+                                <h3>Views</h3>
+                            </div>
+                            <i class="fa-brands fa-instagram brand-instagram" aria-hidden="true"></i>
+                        </div>
+                        <ul class="offer-list">
+                            <li><span>20k Views</span><strong>50/-</strong></li>
+                            <li><span>100k Views</span><strong>99/-</strong></li>
+                            <li><span>500k Views</span><strong>199/-</strong></li>
+                            <li><span>1 Million Views</span><strong>299/-</strong></li>
+                        </ul>
+                        <a class="offer-link" href="https://t.me/um11rr" target="_blank" rel="noreferrer">Order via Telegram</a>
+                    </article>
+
+                    <article class="offer-card panel reveal">
+                        <div class="offer-head">
+                            <div>
+                                <p class="panel-kicker">Facebook</p>
+                                <h3>Views</h3>
+                            </div>
+                            <i class="fa-brands fa-facebook-f brand-facebook" aria-hidden="true"></i>
+                        </div>
+                        <ul class="offer-list">
+                            <li><span>1k Views</span><strong>20/-</strong></li>
+                            <li><span>10k Views</span><strong>150/-</strong></li>
+                            <li><span>50k Views</span><strong>499/-</strong></li>
+                        </ul>
+                        <a class="offer-link" href="https://t.me/um11rr" target="_blank" rel="noreferrer">Order via Telegram</a>
+                    </article>
+
+                    <article class="offer-card panel reveal">
+                        <div class="offer-head">
+                            <div>
+                                <p class="panel-kicker">Facebook</p>
+                                <h3>Likes</h3>
+                            </div>
+                            <i class="fa-brands fa-facebook-f brand-facebook" aria-hidden="true"></i>
+                        </div>
+                        <ul class="offer-list">
+                            <li><span>200 Likes</span><strong>30/-</strong></li>
+                            <li><span>500 Likes</span><strong>60/-</strong></li>
+                            <li><span>1k Likes</span><strong>99/-</strong></li>
+                            <li><span>5k Likes</span><strong>399/-</strong></li>
+                        </ul>
+                        <a class="offer-link" href="https://t.me/um11rr" target="_blank" rel="noreferrer">Order via Telegram</a>
+                    </article>
+
+                    <article class="offer-card panel reveal">
+                        <div class="offer-head">
+                            <div>
+                                <p class="panel-kicker">Facebook</p>
+                                <h3>Page followers</h3>
+                            </div>
+                            <i class="fa-brands fa-facebook-f brand-facebook" aria-hidden="true"></i>
+                        </div>
+                        <ul class="offer-list">
+                            <li><span>200 Followers</span><strong>60/-</strong></li>
+                            <li><span>1k Followers</span><strong>199/-</strong></li>
+                            <li><span>5k Followers</span><strong>899/-</strong></li>
+                        </ul>
+                        <a class="offer-link" href="https://t.me/um11rr" target="_blank" rel="noreferrer">Order via Telegram</a>
+                    </article>
+
+                    <article class="offer-card panel reveal">
+                        <div class="offer-head">
+                            <div>
+                                <p class="panel-kicker">YouTube</p>
+                                <h3>Views</h3>
+                            </div>
+                            <i class="fa-brands fa-youtube brand-youtube" aria-hidden="true"></i>
+                        </div>
+                        <ul class="offer-list">
+                            <li><span>100 Views</span><strong>30/-</strong></li>
+                            <li><span>500 Views</span><strong>99/-</strong></li>
+                            <li><span>1k Views</span><strong>199/-</strong></li>
+                            <li><span>5k Views</span><strong>899/-</strong></li>
+                        </ul>
+                        <a class="offer-link" href="https://t.me/um11rr" target="_blank" rel="noreferrer">Order via Telegram</a>
+                    </article>
+
+                    <article class="offer-card panel reveal">
+                        <div class="offer-head">
+                            <div>
+                                <p class="panel-kicker">YouTube</p>
+                                <h3>Likes</h3>
+                            </div>
+                            <i class="fa-brands fa-youtube brand-youtube" aria-hidden="true"></i>
+                        </div>
+                        <ul class="offer-list">
+                            <li><span>100 Likes</span><strong>20/-</strong></li>
+                            <li><span>500 Likes</span><strong>80/-</strong></li>
+                            <li><span>1k Likes</span><strong>150/-</strong></li>
+                            <li><span>5k Likes</span><strong>699/-</strong></li>
+                        </ul>
+                        <a class="offer-link" href="https://t.me/um11rr" target="_blank" rel="noreferrer">Order via Telegram</a>
+                    </article>
+
+                    <article class="offer-card panel reveal">
+                        <div class="offer-head">
+                            <div>
+                                <p class="panel-kicker">YouTube</p>
+                                <h3>Subscribers</h3>
+                            </div>
+                            <i class="fa-brands fa-youtube brand-youtube" aria-hidden="true"></i>
+                        </div>
+                        <ul class="offer-list">
+                            <li><span>100 Subscribers</span><strong>250/-</strong></li>
+                            <li><span>500 Subscribers</span><strong>1099/-</strong></li>
+                            <li><span>1k Subscribers</span><strong>1999/-</strong></li>
+                        </ul>
+                        <a class="offer-link" href="https://t.me/um11rr" target="_blank" rel="noreferrer">Order via Telegram</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section contact-section" id="contact">
+            <div class="contact-panel panel reveal">
+                <div class="contact-copy">
+                    <p class="eyebrow">Contact</p>
+                    <h2>Let's turn curiosity into something real.</h2>
+                    <p>
+                        If you want to talk about product feel, digital systems, gaming mindset, or future-facing web
+                        experiences, I'm easy to reach.
+                    </p>
+                    <div class="contact-actions">
+                        <a class="btn btn-primary magnetic" href="mailto:umerbinabdulaziz88@gmail.com">Email Umar</a>
+                        <button class="btn btn-secondary magnetic" id="copyEmailButton" type="button"
+                            data-email="umerbinabdulaziz88@gmail.com">
+                            Copy email
+                        </button>
+                    </div>
+                </div>
+
+                <div class="contact-links">
+                    <a class="social-card" href="https://instagram.com/um4rbinabdulaziz" target="_blank"
+                        rel="noreferrer">
+                        <i class="fa-brands fa-instagram brand-instagram" aria-hidden="true"></i>
+                        <div>
+                            <strong>Instagram</strong>
+                            <span>@um4rbinabdulaziz</span>
+                        </div>
+                    </a>
+                    <a class="social-card" href="https://t.me/um11rr" target="_blank" rel="noreferrer">
+                        <i class="fa-brands fa-telegram brand-telegram" aria-hidden="true"></i>
+                        <div>
+                            <strong>Telegram</strong>
+                            <span>@um11rr</span>
+                        </div>
+                    </a>
+                    <a class="social-card" href="https://x.com/um11rr" target="_blank" rel="noreferrer">
+                        <i class="fa-brands fa-x-twitter brand-x" aria-hidden="true"></i>
+                        <div>
+                            <strong>X</strong>
+                            <span>@um11rr</span>
+                        </div>
+                    </a>
+                    <a class="social-card" href="https://snapchat.com/add/um11rr" target="_blank" rel="noreferrer">
+                        <i class="fa-brands fa-snapchat brand-snapchat" aria-hidden="true"></i>
+                        <div>
+                            <strong>Snapchat</strong>
+                            <span>@um11rr</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Designed as a modern personal universe for Umar Bin Abdul Aziz.</p>
+        <div class="footer-actions">
+            <button class="footer-link" type="button" data-open-command="true">Open explorer</button>
+            <div class="policy-links">
+                <button class="policy-button" type="button" data-notice="privacy-policy">Privacy Policy</button>
+                <button class="policy-button" type="button" data-notice="terms-service">Terms of Service</button>
+                <button class="policy-button" type="button" data-notice="platform-rules">Platform Rules</button>
+                <button class="policy-button" type="button" data-notice="refund-policy">Refund Policy</button>
+            </div>
+        </div>
+    </footer>
+
+    <aside class="command-palette" id="commandPalette" aria-hidden="true">
+        <div class="command-backdrop" data-close-command="true"></div>
+        <div class="command-dialog panel" role="dialog" aria-modal="true" aria-labelledby="commandTitle">
+            <div class="command-head">
+                <div>
+                    <p class="panel-kicker">Explorer</p>
+                    <h2 id="commandTitle">Move through the universe faster</h2>
+                </div>
+                <button class="command-close" type="button" data-close-command="true" aria-label="Close explorer">
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <label class="command-input-shell">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input id="commandInput" type="text" autocomplete="off"
+                    placeholder="Try: work, contact, about, telegram, email">
+            </label>
+
+            <div class="command-list" id="commandList">
+                <button class="command-item" type="button" data-action="scroll" data-target="#about">
+                    <strong>Go to About</strong>
+                    <span>Learn the mindset and story</span>
+                </button>
+                <button class="command-item" type="button" data-action="scroll" data-target="#systems">
+                    <strong>Open Systems</strong>
+                    <span>See product principles and operating style</span>
+                </button>
+                <button class="command-item" type="button" data-action="scroll" data-target="#work">
+                    <strong>See Selected Work</strong>
+                    <span>Jump into featured directions</span>
+                </button>
+                <button class="command-item" type="button" data-action="scroll" data-target="#agency">
+                    <strong>Open Solutions</strong>
+                    <span>Browse the premium agency section</span>
+                </button>
+                <button class="command-item" type="button" data-action="scroll" data-target="#offers">
+                    <strong>Open Offers</strong>
+                    <span>Browse the curated package catalog</span>
+                </button>
+                <button class="command-item" type="button" data-action="copy-email">
+                    <strong>Copy Email</strong>
+                    <span>Grab the primary contact address</span>
+                </button>
+                <a class="command-item link-item" href="https://t.me/um11rr" target="_blank" rel="noreferrer">
+                    <strong>Open Telegram</strong>
+                    <span>Start a conversation directly</span>
+                </a>
+            </div>
+        </div>
+    </aside>
+
+    <aside class="notice-modal" id="noticeModal" aria-hidden="true">
+        <div class="notice-backdrop" data-close-notice="true"></div>
+        <div class="notice-dialog panel" role="dialog" aria-modal="true" aria-labelledby="noticeTitle">
+            <div class="notice-head">
+                <div>
+                    <p class="panel-kicker">Important notice</p>
+                    <h2 id="noticeTitle">Policy Notice</h2>
+                </div>
+                <button class="notice-close" type="button" data-close-notice="true" aria-label="Close notice">
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="notice-body" id="noticeBody"></div>
+        </div>
+    </aside>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
